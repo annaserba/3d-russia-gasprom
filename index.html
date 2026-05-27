@@ -156,6 +156,14 @@
     const points = [...document.querySelectorAll('.point')];
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const defaultPulse = { x: 340, y: 300 };
+    const motion = {
+      currentX: 0.5,
+      currentY: 0.5,
+      targetX: 0.5,
+      targetY: 0.5,
+      active: false,
+      frame: null,
+    };
 
     points.forEach((point, index) => {
       const label = point.querySelector('.label')?.textContent?.trim() || '';
@@ -170,12 +178,13 @@
         const rect = loader.getBoundingClientRect();
         const x = (event.clientX - rect.left) / rect.width;
         const y = (event.clientY - rect.top) / rect.height;
-        const tiltX = (0.5 - y) * 4;
-        const tiltY = (x - 0.5) * 7;
         const svgCursor = getSvgCursor(event);
 
+        motion.targetX = x;
+        motion.targetY = y;
+        motion.active = true;
         mapShell.classList.add('is-interactive');
-        mapShell.style.transform = `rotateX(${4 + tiltX}deg) rotateZ(${-0.8 + tiltY * 0.07}deg) translate3d(${(x - 0.5) * 10}px, ${(y - 0.5) * 6}px, 0) scale(1.04)`;
+        startSmoothMotion();
 
         if (svgCursor) {
           moveMapPulse(svgCursor.x, svgCursor.y);
@@ -183,10 +192,44 @@
       });
 
       loader.addEventListener('pointerleave', () => {
-        mapShell.classList.remove('is-interactive');
-        mapShell.style.transform = '';
+        motion.targetX = 0.5;
+        motion.targetY = 0.5;
+        motion.active = false;
         moveMapPulse(defaultPulse.x, defaultPulse.y);
       });
+    }
+
+    function startSmoothMotion() {
+      if (motion.frame) return;
+
+      motion.frame = requestAnimationFrame(updateSmoothMotion);
+    }
+
+    function updateSmoothMotion() {
+      motion.currentX += (motion.targetX - motion.currentX) * 0.08;
+      motion.currentY += (motion.targetY - motion.currentY) * 0.08;
+
+      const deltaX = motion.currentX - 0.5;
+      const deltaY = motion.currentY - 0.5;
+      const tiltX = -deltaY * 4;
+      const tiltY = deltaX * 7;
+
+      mapShell.style.transform = `rotateX(${4 + tiltX}deg) rotateZ(${-0.8 + tiltY * 0.07}deg) translate3d(${deltaX * 10}px, ${deltaY * 6}px, 0) scale(1.04)`;
+
+      const isSettled =
+        Math.abs(motion.targetX - motion.currentX) < 0.001 &&
+        Math.abs(motion.targetY - motion.currentY) < 0.001;
+
+      if (!motion.active && isSettled) {
+        motion.currentX = 0.5;
+        motion.currentY = 0.5;
+        motion.frame = null;
+        mapShell.classList.remove('is-interactive');
+        mapShell.style.transform = '';
+        return;
+      }
+
+      motion.frame = requestAnimationFrame(updateSmoothMotion);
     }
 
     function getSvgCursor(event) {

@@ -64,7 +64,7 @@
 
 .map-shell.is-interactive {
   animation: none;
-  transition: transform .18s ease-out;
+  transition: none;
 }
 
 .map-art {
