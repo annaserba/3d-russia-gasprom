@@ -150,15 +150,16 @@
 }
 
 .label {
-  fill: #f3fbff;
-  font-size: 13px;
-  font-weight: 600;
+  fill: #ffffff;
+  font-size: 12.6px;
+  font-weight: 700;
   letter-spacing: 0;
   paint-order: stroke;
-  stroke: rgba(6, 19, 34, .92);
-  stroke-width: 3.2px;
+  stroke: rgba(4, 14, 25, .96);
+  stroke-width: 2.4px;
   stroke-linejoin: round;
-  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .28));
+  text-rendering: geometricPrecision;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .42));
   transition:
     fill .18s ease-out,
     opacity .18s ease-out,
@@ -180,6 +181,7 @@
 .point:focus .label,
 .point.is-active .label {
   fill: #ffffff;
+  stroke: rgba(4, 14, 25, 1);
   transform: translateY(-2px);
 }
 
