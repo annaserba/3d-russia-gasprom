@@ -107,7 +107,7 @@
 }
 
 .plane {
-  fill: #edf4f6;
+  fill: #8fd3ce;
   stroke: rgba(7, 21, 37, .58);
   stroke-width: .8;
   opacity: .86;
@@ -116,19 +116,6 @@
     drop-shadow(0 3px 6px rgba(0, 0, 0, .28));
   transform-box: fill-box;
   transform-origin: center;
-}
-
-.plane-main {
-  fill: #f1d39b;
-}
-
-.plane-yamal,
-.plane-ufa {
-  fill: #8fd3ce;
-}
-
-.plane-urengoy {
-  fill: #a7bddf;
 }
 
 .hub,
