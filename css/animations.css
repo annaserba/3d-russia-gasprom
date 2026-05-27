@@ -10,10 +10,10 @@
 @keyframes floatMap {
   0%,
   100% {
-    transform: rotateX(4deg) rotateZ(-.8deg) translate3d(0, 0, 0) scale(1.035);
+    opacity: 1;
   }
   50% {
-    transform: rotateX(3deg) rotateZ(-.6deg) translate3d(0, -4px, 10px) scale(1.045);
+    opacity: .98;
   }
 }
 
@@ -31,22 +31,12 @@
 @keyframes mapArtEnter {
   from {
     opacity: 0;
-    transform: translateY(4px) scale(.9, 1.22);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-28px) scale(.99, 1.4);
   }
 }
 
 @keyframes mapArtEnterMobile {
   from {
     opacity: 0;
-    transform: translateY(6px) scale(.66, .94);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-8px) scale(.76, 1.08);
   }
 }
 

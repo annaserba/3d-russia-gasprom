@@ -45,7 +45,7 @@
             </filter>
           </defs>
 
-          <g class="map-art">
+          <g class="map-art" transform="translate(0 -28) scale(.99 1.4)">
             <use href="#russia" class="depth"/>
             <use href="#russia" class="depth depth-mid"/>
             <use href="#russia" class="map-edge-soft"/>
@@ -152,6 +152,7 @@
   <script>
     const loader = document.querySelector('.loader');
     const mapShell = document.querySelector('.map-shell');
+    const mapArt = document.querySelector('.map-art');
     const mapSvg = document.querySelector('svg');
     const mapPulse = document.querySelector('#mapPulse');
     const points = [...document.querySelectorAll('.point')];
@@ -212,10 +213,14 @@
 
       const deltaX = motion.currentX - 0.5;
       const deltaY = motion.currentY - 0.5;
-      const tiltX = -deltaY * 4;
-      const tiltY = deltaX * 7;
+      const driftX = deltaX * 10;
+      const driftY = deltaY * 6;
+      const rotate = -0.8 + deltaX * 0.5 - deltaY * 0.18;
 
-      mapShell.style.transform = `rotateX(${4 + tiltX}deg) rotateZ(${-0.8 + tiltY * 0.07}deg) translate3d(${deltaX * 10}px, ${deltaY * 6}px, 0) scale(1.04)`;
+      mapArt.setAttribute(
+        'transform',
+        `translate(${driftX} ${-28 + driftY}) rotate(${rotate} 550 280) scale(.99 1.4)`
+      );
 
       const isSettled =
         Math.abs(motion.targetX - motion.currentX) < 0.001 &&
@@ -226,7 +231,7 @@
         motion.currentY = 0.5;
         motion.frame = null;
         mapShell.classList.remove('is-interactive');
-        mapShell.style.transform = '';
+        mapArt.setAttribute('transform', 'translate(0 -28) scale(.99 1.4)');
         return;
       }
 

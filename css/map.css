@@ -1,24 +1,22 @@
 .depth {
-  opacity: .42;
+  opacity: .34;
   fill: #06101b;
   stroke: rgba(173, 200, 209, .16);
   stroke-width: 2.4;
   stroke-linecap: round;
   stroke-linejoin: round;
   transform: translate(18px, 24px);
-  filter: blur(.4px);
   shape-rendering: geometricPrecision;
   animation: mapLayerEnter .9s .18s ease-out both;
 }
 
 .depth-mid {
-  opacity: .28;
+  opacity: .22;
   fill: #0a1a29;
   stroke: rgba(143, 211, 206, .18);
   stroke-linecap: round;
   stroke-linejoin: round;
   transform: translate(9px, 12px);
-  filter: blur(.15px);
   shape-rendering: geometricPrecision;
 }
 
@@ -37,13 +35,10 @@
 .map {
   fill: url(#mapFill);
   stroke: var(--map-edge);
-  stroke-width: 1.65;
+  stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter:
-    drop-shadow(0 0 7px rgba(173, 200, 209, .22))
-    drop-shadow(0 16px 20px rgba(0, 0, 0, .34))
-    drop-shadow(0 34px 40px rgba(0, 0, 0, .34));
+  filter: none;
   shape-rendering: geometricPrecision;
   vector-effect: non-scaling-stroke;
   animation: mapLayerEnter .95s .24s ease-out both;
@@ -72,7 +67,8 @@
   stroke-linecap: round;
   stroke-dasharray: 2 18;
   opacity: .62;
-  filter: drop-shadow(0 0 5px rgba(159, 207, 216, .22));
+  filter: none;
+  shape-rendering: geometricPrecision;
   animation: dataFlow 4.8s linear infinite;
 }
 
@@ -92,9 +88,8 @@
   stroke-linecap: round;
   stroke-dasharray: 2 12;
   opacity: var(--route-opacity);
-  filter:
-    drop-shadow(0 0 4px rgba(159, 207, 216, .26))
-    drop-shadow(0 0 10px rgba(167, 189, 223, .08));
+  filter: none;
+  shape-rendering: geometricPrecision;
   animation:
     routeEnter .72s .88s ease-out both,
     dash 6.2s 1.18s linear infinite;
@@ -103,9 +98,7 @@
 .route-main {
   stroke-width: 1.45;
   stroke-dasharray: 3 14;
-  filter:
-    drop-shadow(0 0 6px rgba(159, 207, 216, .3))
-    drop-shadow(0 0 9px rgba(255, 255, 255, .08));
+  filter: none;
 }
 
 .route-secondary {
@@ -116,7 +109,7 @@
   stroke: #f1d39b;
   stroke-width: 1.25;
   stroke-dasharray: 2 10;
-  filter: drop-shadow(0 0 5px rgba(241, 211, 155, .22));
+  filter: none;
 }
 
 .flight-arc {
@@ -134,9 +127,7 @@
   stroke-width: .7;
   stroke-linejoin: round;
   opacity: .9;
-  filter:
-    drop-shadow(0 0 5px rgba(237, 244, 246, .42))
-    drop-shadow(0 3px 6px rgba(0, 0, 0, .28));
+  filter: none;
   transform-box: fill-box;
   transform-origin: center;
   scale: .82;
@@ -167,7 +158,7 @@
   fill: #edf4f6;
   stroke: var(--point-accent, #adc8d1);
   stroke-width: 1.6;
-  filter: drop-shadow(0 0 4px rgba(173, 200, 209, .3));
+  filter: none;
   transform: scale(1.01, .714);
   transform-box: fill-box;
   transform-origin: center;
@@ -206,9 +197,7 @@
   fill: #ffffff;
   stroke: var(--point-accent, #d7e3e7);
   stroke-width: 2.2;
-  filter:
-    drop-shadow(0 0 8px rgba(237, 244, 246, .55))
-    drop-shadow(0 0 18px color-mix(in srgb, var(--point-accent, #7ec9d1) 32%, transparent));
+  filter: none;
 }
 
 .point:hover .label,
@@ -227,7 +216,7 @@
   stroke-linejoin: round;
   stroke-dasharray: 160 1000;
   mix-blend-mode: screen;
-  filter: blur(2.5px);
+  filter: none;
   animation: sweep 7.2s ease-in-out infinite;
 }
 
