@@ -1,37 +1,51 @@
-.status {
+.map-tooltip {
   position: absolute;
-  right: clamp(20px, 4vw, 48px);
-  bottom: 24px;
-  display: grid;
-  width: min(240px, calc(100vw - 32px));
+  z-index: 4;
+
+  min-width: 188px;
+  padding: 10px 12px;
+
+  pointer-events: none;
+
+  background: rgba(7, 21, 37, .82);
+  border: 1px solid rgba(255, 255, 255, .13);
+  border-radius: 8px;
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, .24),
+    inset 0 1px 0 rgba(255, 255, 255, .08);
+  opacity: 0;
+  backdrop-filter: blur(12px);
+  transform: translate(-50%, calc(-100% - 18px)) scale(.96);
+  transition:
+    opacity .18s ease-out,
+    transform .18s ease-out;
 }
 
-.bar {
-  position: relative;
-  height: 4px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, .08);
-  box-shadow: 0 0 14px rgba(126, 201, 209, .14);
+.map-tooltip.is-visible {
+  opacity: 1;
+  transform: translate(-50%, calc(-100% - 24px)) scale(1);
 }
 
-.bar::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 42%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, transparent, #7ec9d1, #f3fbff);
-  animation: scan 2.8s ease-in-out infinite;
+.map-tooltip span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 13px;
+  font-weight: 600;
+  color: #f3fbff;
+}
+
+.map-tooltip strong {
+  display: block;
+
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, .68);
 }
 
 @media (max-width: 720px) {
-  .status {
-    position: fixed;
-  }
-
-  .status {
-    right: 12px;
-    bottom: 16px;
+  .map-tooltip {
+    display: none;
   }
 }

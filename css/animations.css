@@ -33,6 +33,12 @@
   }
 }
 
+@keyframes dataFlow {
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+
 @keyframes pulse {
   0% {
     r: 5;

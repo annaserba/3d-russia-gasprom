@@ -58,6 +58,12 @@
   aspect-ratio: 2 / 1;
   transform-style: preserve-3d;
   animation: floatMap 5.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+.map-shell.is-interactive {
+  animation: none;
+  transition: transform .18s ease-out;
 }
 
 .map-art {
