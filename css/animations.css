@@ -10,10 +10,10 @@
 @keyframes floatMap {
   0%,
   100% {
-    transform: rotateX(14deg) rotateZ(-2deg) translate3d(0, 0, 0) scale(1.06);
+    transform: rotateX(9deg) rotateZ(-1.1deg) translate3d(0, 0, 0) scale(1.045);
   }
   50% {
-    transform: rotateX(10deg) rotateZ(-1deg) translate3d(0, -12px, 22px) scale(1.08);
+    transform: rotateX(7deg) rotateZ(-.8deg) translate3d(0, -5px, 10px) scale(1.055);
   }
 }
 
@@ -23,48 +23,20 @@
   }
 }
 
-@keyframes orbitalGlow {
-  0%,
-  100% {
-    opacity: .22;
-    transform: translateZ(-26px) rotateX(64deg) scale(.96);
-  }
-  50% {
-    opacity: .42;
-    transform: translateZ(-20px) rotateX(62deg) scale(1.03);
-  }
-}
-
-@keyframes orbitalSweep {
-  to {
-    transform: translateZ(-26px) rotateX(64deg) rotate(360deg);
-  }
-}
-
 @keyframes dash {
   to {
-    stroke-dashoffset: -92;
+    stroke-dashoffset: -72;
   }
 }
 
 @keyframes pulse {
   0% {
     r: 5;
-    opacity: .75;
+    opacity: .24;
   }
   100% {
-    r: 27;
+    r: 16;
     opacity: 0;
-  }
-}
-
-@keyframes breathe {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.22);
   }
 }
 
@@ -75,7 +47,7 @@
   }
   20%,
   70% {
-    opacity: .72;
+    opacity: .42;
   }
   100% {
     stroke-dashoffset: -520;

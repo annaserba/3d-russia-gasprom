@@ -74,7 +74,7 @@
   width: 42%;
   border-radius: inherit;
   background: linear-gradient(90deg, transparent, #79d5f5, #eaf9ff);
-  animation: scan 1.55s ease-in-out infinite;
+  animation: scan 2.8s ease-in-out infinite;
 }
 
 @media (max-width: 720px) {
