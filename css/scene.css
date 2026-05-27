@@ -47,9 +47,10 @@
 
 .stage {
   position: relative;
-  width: min(98vw, 1220px);
+  width: min(92vw, 1120px);
   margin: 0 auto;
   perspective: 1100px;
+  animation: stageEnter .8s cubic-bezier(.2, .8, .2, 1) both;
 }
 
 .map-shell {
@@ -67,14 +68,15 @@
 }
 
 .map-art {
-  transform: translateY(-34px) scaleY(1.18);
+  transform: translateY(-26px) scale(.94, 1.34);
   transform-box: view-box;
   transform-origin: center;
+  animation: mapArtEnter 1.15s .16s cubic-bezier(.2, .8, .2, 1) both;
 }
 
 .map-shell::before,
 .map-shell::after {
-  content: "";
+  content: none;
   position: absolute;
   pointer-events: none;
   inset: 11% 4% 20%;
@@ -85,9 +87,10 @@
 .map-shell::before {
   border: 1px solid rgba(159, 207, 216, .16);
   box-shadow:
-    0 0 20px rgba(126, 201, 209, .13),
-    inset 0 0 28px rgba(126, 201, 209, .07);
-  opacity: .28;
+    0 0 24px rgba(126, 201, 209, .16),
+    0 24px 48px rgba(0, 0, 0, .24),
+    inset 0 0 28px rgba(126, 201, 209, .08);
+  opacity: .42;
 }
 
 .map-shell::after {
@@ -119,10 +122,11 @@ svg {
   .map-shell {
     aspect-ratio: 1.22 / 1;
     animation: none;
-    transform: rotateX(6deg) rotateZ(-.75deg) scale(.8);
+    transform: rotateX(3deg) rotateZ(-.65deg) scale(.84);
   }
 
   .map-art {
-    transform: translateY(-10px) scale(.68, .96);
+    transform: translateY(-8px) scale(.76, 1.08);
+    animation: mapArtEnterMobile 1.05s .16s cubic-bezier(.2, .8, .2, 1) both;
   }
 }
