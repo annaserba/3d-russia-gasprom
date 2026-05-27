@@ -1,34 +1,42 @@
 .brand {
   position: absolute;
-  left: clamp(8px, 4vw, 38px);
-  top: clamp(8px, 3vw, 28px);
+  left: clamp(20px, 4vw, 48px);
+  top: 22px;
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #ffffff;
-  text-transform: uppercase;
-  font-size: clamp(12px, 1.2vw, 15px);
-  font-weight: 800;
-  letter-spacing: .1em;
+  min-height: 42px;
+  padding: 0 14px 0 0;
+  color: rgba(255, 255, 255, .78);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0;
+  background: rgba(7, 21, 37, .72);
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 8px;
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, .18),
+    inset 0 1px 0 rgba(255, 255, 255, .08);
+  backdrop-filter: blur(10px);
 }
 
 .brand-mark {
   position: relative;
-  width: 34px;
-  height: 34px;
-  border-radius: 7px;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px 0 0 8px;
   background:
-    linear-gradient(145deg, #f8fdff, #cce8f4);
+    linear-gradient(145deg, #f8fdff, #d8edf3);
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, .42),
-    0 14px 26px rgba(0, 0, 0, .32);
+    inset 0 1px 0 rgba(255, 255, 255, .82),
+    1px 0 0 rgba(255, 255, 255, .12);
 }
 
 .brand-mark::before {
   content: "G";
   position: absolute;
   left: 8px;
-  bottom: 3px;
+  bottom: 5px;
   color: var(--gazprom-blue);
   font-size: 25px;
   font-weight: 900;
@@ -39,7 +47,7 @@
   content: "";
   position: absolute;
   right: 8px;
-  top: 5px;
+  top: 7px;
   width: 7px;
   height: 13px;
   border-radius: 8px 8px 8px 0;
@@ -49,13 +57,10 @@
 
 .status {
   position: absolute;
-  right: clamp(8px, 4vw, 38px);
-  bottom: clamp(8px, 3vw, 28px);
+  right: clamp(20px, 4vw, 48px);
+  bottom: 24px;
   display: grid;
   width: min(240px, calc(100vw - 32px));
-  color: rgba(224, 250, 255, .86);
-  font-size: 13px;
-  font-weight: 620;
 }
 
 .bar {
@@ -63,8 +68,8 @@
   height: 4px;
   overflow: hidden;
   border-radius: 999px;
-  background: rgba(140, 207, 232, .12);
-  box-shadow: 0 0 14px rgba(0, 104, 170, .16);
+  background: rgba(255, 255, 255, .08);
+  box-shadow: 0 0 14px rgba(126, 201, 209, .14);
 }
 
 .bar::before {
@@ -73,7 +78,7 @@
   inset: 0 auto 0 0;
   width: 42%;
   border-radius: inherit;
-  background: linear-gradient(90deg, transparent, #79d5f5, #eaf9ff);
+  background: linear-gradient(90deg, transparent, #7ec9d1, #f3fbff);
   animation: scan 2.8s ease-in-out infinite;
 }
 
@@ -81,5 +86,17 @@
   .brand,
   .status {
     position: fixed;
+  }
+
+  .brand {
+    left: 12px;
+    top: 12px;
+    max-width: calc(100vw - 24px);
+    font-size: 13px;
+  }
+
+  .status {
+    right: 12px;
+    bottom: 16px;
   }
 }
