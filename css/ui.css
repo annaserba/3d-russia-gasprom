@@ -1,0 +1,85 @@
+.brand {
+  position: absolute;
+  left: clamp(8px, 4vw, 38px);
+  top: clamp(8px, 3vw, 28px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: clamp(12px, 1.2vw, 15px);
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.brand-mark {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 7px;
+  background:
+    linear-gradient(145deg, #ffffff, #dff8ff);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, .5),
+    0 12px 24px rgba(0, 0, 0, .22);
+}
+
+.brand-mark::before {
+  content: "G";
+  position: absolute;
+  left: 8px;
+  bottom: 3px;
+  color: var(--gazprom-blue);
+  font-size: 25px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: 5px;
+  width: 7px;
+  height: 13px;
+  border-radius: 8px 8px 8px 0;
+  background: var(--gazprom-blue);
+  transform: rotate(28deg);
+}
+
+.status {
+  position: absolute;
+  right: clamp(8px, 4vw, 38px);
+  bottom: clamp(8px, 3vw, 28px);
+  display: grid;
+  width: min(240px, calc(100vw - 32px));
+  color: rgba(224, 250, 255, .86);
+  font-size: 13px;
+  font-weight: 620;
+}
+
+.bar {
+  position: relative;
+  height: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(184, 239, 255, .16);
+  box-shadow: 0 0 16px rgba(0, 121, 193, .2);
+}
+
+.bar::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 42%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, transparent, #8ee6ff, #ffffff);
+  animation: scan 1.55s ease-in-out infinite;
+}
+
+@media (max-width: 720px) {
+  .brand,
+  .status {
+    position: fixed;
+  }
+}

@@ -1,0 +1,93 @@
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@keyframes floatMap {
+  0%,
+  100% {
+    transform: rotateX(14deg) rotateZ(-2deg) translate3d(0, 0, 0) scale(1.06);
+  }
+  50% {
+    transform: rotateX(10deg) rotateZ(-1deg) translate3d(0, -12px, 22px) scale(1.08);
+  }
+}
+
+@keyframes gridDrift {
+  to {
+    background-position: 0 44px, 44px 0;
+  }
+}
+
+@keyframes orbitalGlow {
+  0%,
+  100% {
+    opacity: .26;
+    transform: translateZ(-26px) rotateX(64deg) scale(.96);
+  }
+  50% {
+    opacity: .58;
+    transform: translateZ(-20px) rotateX(62deg) scale(1.03);
+  }
+}
+
+@keyframes orbitalSweep {
+  to {
+    transform: translateZ(-26px) rotateX(64deg) rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -92;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    r: 5;
+    opacity: .75;
+  }
+  100% {
+    r: 27;
+    opacity: 0;
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.22);
+  }
+}
+
+@keyframes sweep {
+  0% {
+    stroke-dashoffset: 760;
+    opacity: 0;
+  }
+  20%,
+  70% {
+    opacity: .72;
+  }
+  100% {
+    stroke-dashoffset: -520;
+    opacity: 0;
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(260%);
+  }
+}
