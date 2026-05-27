@@ -1,15 +1,15 @@
 :root {
-  --bg: #031425;
-  --bg-2: #062a48;
+  --bg: #020b14;
+  --bg-2: #041d33;
   --gazprom-blue: #0079c1;
-  --deep-blue: #004b86;
-  --cyan: #46c9ff;
-  --blue: #0079c1;
-  --ice: #dff8ff;
-  --map: #086ea8;
-  --map-edge: #b8efff;
-  --glow: rgba(70, 201, 255, .58);
-  --line: rgba(184, 239, 255, .76);
+  --deep-blue: #003b69;
+  --cyan: #6fcfff;
+  --blue: #0068aa;
+  --ice: #d7edf7;
+  --map: #064f83;
+  --map-edge: #8ccfe8;
+  --glow: rgba(111, 207, 255, .38);
+  --line: rgba(184, 226, 242, .62);
   --gold: #ffffff;
 }
 
@@ -24,9 +24,9 @@ body {
   margin: 0;
   overflow: hidden;
   background:
-    radial-gradient(circle at 22% 24%, rgba(0, 121, 193, .16), transparent 29%),
-    radial-gradient(circle at 72% 38%, rgba(70, 201, 255, .08), transparent 35%),
-    linear-gradient(145deg, var(--bg), var(--bg-2) 58%, #02101e);
+    radial-gradient(circle at 20% 22%, rgba(0, 104, 170, .12), transparent 30%),
+    radial-gradient(circle at 74% 40%, rgba(111, 207, 255, .05), transparent 36%),
+    linear-gradient(145deg, var(--bg), var(--bg-2) 58%, #01070d);
   color: var(--ice);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }

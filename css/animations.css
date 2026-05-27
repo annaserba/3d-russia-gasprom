@@ -26,11 +26,11 @@
 @keyframes orbitalGlow {
   0%,
   100% {
-    opacity: .26;
+    opacity: .22;
     transform: translateZ(-26px) rotateX(64deg) scale(.96);
   }
   50% {
-    opacity: .58;
+    opacity: .42;
     transform: translateZ(-20px) rotateX(62deg) scale(1.03);
   }
 }
