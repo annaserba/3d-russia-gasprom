@@ -32,7 +32,7 @@
 
 .data-flow {
   fill: none;
-  stroke: rgba(237, 244, 246, .28);
+  stroke: rgba(143, 211, 206, .34);
   stroke-width: 1;
   stroke-linecap: round;
   stroke-dasharray: 2 18;
@@ -42,6 +42,7 @@
 }
 
 .data-flow-b {
+  stroke: rgba(167, 189, 223, .28);
   opacity: .38;
   animation-delay: -1.7s;
   animation-duration: 6.2s;
@@ -71,10 +72,10 @@
 }
 
 .route-hot {
-  stroke: #d7e3e7;
+  stroke: #f1d39b;
   stroke-width: 1.5;
   stroke-dasharray: 4 12;
-  filter: drop-shadow(0 0 5px rgba(215, 227, 231, .2));
+  filter: drop-shadow(0 0 5px rgba(241, 211, 155, .22));
 }
 
 .hub,
@@ -86,7 +87,7 @@
 
 .pulse {
   fill: transparent;
-  stroke: var(--cyan);
+  stroke: var(--point-accent, var(--cyan));
   stroke-width: 1.4;
   opacity: .24;
   animation: pulse 3.8s ease-out infinite;
@@ -94,7 +95,7 @@
 
 .dot {
   fill: #edf4f6;
-  stroke: #adc8d1;
+  stroke: var(--point-accent, #adc8d1);
   stroke-width: 1.6;
   filter: drop-shadow(0 0 4px rgba(173, 200, 209, .3));
   transition:
@@ -124,11 +125,11 @@
 .point:focus .dot,
 .point.is-active .dot {
   fill: #ffffff;
-  stroke: #d7e3e7;
+  stroke: var(--point-accent, #d7e3e7);
   stroke-width: 2.2;
   filter:
     drop-shadow(0 0 8px rgba(237, 244, 246, .55))
-    drop-shadow(0 0 18px rgba(126, 201, 209, .22));
+    drop-shadow(0 0 18px color-mix(in srgb, var(--point-accent, #7ec9d1) 32%, transparent));
 }
 
 .point:hover .label,

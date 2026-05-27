@@ -16,18 +16,20 @@
 
           <defs>
             <linearGradient id="mapFill" x1="130" x2="1010" y1="120" y2="460" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#2f6f83"/>
-              <stop offset=".42" stop-color="#234a63"/>
+              <stop stop-color="#346f76"/>
+              <stop offset=".46" stop-color="#254d67"/>
               <stop offset="1" stop-color="#14273a"/>
             </linearGradient>
             <linearGradient id="routeGlow" x1="130" x2="990" y1="270" y2="260" gradientUnits="userSpaceOnUse">
               <stop stop-color="#ffffff" stop-opacity=".14"/>
-              <stop offset=".42" stop-color="#9fcfd8"/>
+              <stop offset=".38" stop-color="#8fd3ce"/>
+              <stop offset=".72" stop-color="#a7bddf"/>
               <stop offset="1" stop-color="#edf4f6"/>
             </linearGradient>
             <radialGradient id="mapPulse" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(340 300) rotate(19) scale(520 180)">
-              <stop stop-color="#edf4f6" stop-opacity=".2"/>
-              <stop offset=".44" stop-color="#9fcfd8" stop-opacity=".12"/>
+              <stop stop-color="#f1d39b" stop-opacity=".18"/>
+              <stop offset=".34" stop-color="#8fd3ce" stop-opacity=".14"/>
+              <stop offset=".64" stop-color="#9fb5dc" stop-opacity=".08"/>
               <stop offset="1" stop-color="#14273a" stop-opacity="0"/>
             </radialGradient>
             <clipPath id="russiaClip">
@@ -65,55 +67,55 @@
             <path class="route route-secondary" d="M163.4 320.1 C172 352 194 368 223.2 374.2"/>
             <path class="route route-hot" d="M323.7 312.1 C342 286 363 267 387.5 260.8"/>
 
-            <g class="point" transform="translate(163.4 320.1)">
+            <g class="point" style="--point-accent: #f1d39b" transform="translate(163.4 320.1)">
               <circle class="pulse" r="4"/>
               <circle class="dot" r="4"/>
               <text class="label" x="10" y="-10">Москва</text>
             </g>
 
-            <g class="point" transform="translate(121.6 296.1)" style="animation-delay:.15s">
+            <g class="point" transform="translate(121.6 296.1)" style="--point-accent: #8fd3ce; animation-delay:.15s">
               <circle class="pulse" r="4"/>
               <circle class="dot" r="4"/>
               <text class="label" x="9" y="-7">Санкт-Петербург</text>
             </g>
 
-            <g class="point" transform="translate(255.7 275.3)" style="animation-delay:.3s">
+            <g class="point" transform="translate(255.7 275.3)" style="--point-accent: #a7bddf; animation-delay:.3s">
               <circle class="pulse" r="4"/>
               <circle class="dot" r="4"/>
               <text class="label" x="9" y="-8">Ухта</text>
             </g>
 
-            <g class="point" transform="translate(263.8 343)" style="animation-delay:.45s">
+            <g class="point" transform="translate(263.8 343)" style="--point-accent: #d8b98c; animation-delay:.45s">
               <circle class="pulse" r="4"/>
               <circle class="dot" r="4"/>
               <text class="label" x="9" y="15">Оренбург</text>
             </g>
 
-            <g class="point" transform="translate(223.2 374.2)" style="animation-delay:.6s">
+            <g class="point" transform="translate(223.2 374.2)" style="--point-accent: #90c7dd; animation-delay:.6s">
               <circle class="pulse" r="4"/>
               <circle class="dot" r="4"/>
               <text class="label" x="9" y="15">Астрахань</text>
             </g>
 
-            <g class="point" transform="translate(323.7 312.1)" style="animation-delay:.75s">
+            <g class="point" transform="translate(323.7 312.1)" style="--point-accent: #9fcfd8; animation-delay:.75s">
               <circle class="pulse" r="4"/>
               <circle class="dot" r="4"/>
               <text class="label" x="9" y="-8">Тюмень</text>
             </g>
 
-            <g class="point" transform="translate(339.3 236.2)" style="animation-delay:.9s">
+            <g class="point" transform="translate(339.3 236.2)" style="--point-accent: #b7c6e8; animation-delay:.9s">
               <circle class="pulse" r="4"/>
               <circle class="dot" r="4"/>
               <text class="label" x="9" y="-8">Ямал</text>
             </g>
 
-            <g class="point" transform="translate(387.5 260.8)" style="animation-delay:1.05s">
+            <g class="point" transform="translate(387.5 260.8)" style="--point-accent: #8fd3ce; animation-delay:1.05s">
               <circle class="pulse" r="4"/>
               <circle class="dot" r="4"/>
               <text class="label" x="9" y="15">Новый Уренгой</text>
             </g>
 
-            <g class="point" transform="translate(767.1 370.7)" style="animation-delay:1.2s">
+            <g class="point" transform="translate(767.1 370.7)" style="--point-accent: #d8b98c; animation-delay:1.2s">
               <circle class="pulse" r="4"/>
               <circle class="dot" r="4"/>
               <text class="label" x="-112" y="-8">Южно-Сахалинск</text>
