@@ -127,9 +127,12 @@
   <script>
     const loader = document.querySelector('.loader');
     const mapShell = document.querySelector('.map-shell');
+    const mapSvg = document.querySelector('svg');
+    const mapPulse = document.querySelector('#mapPulse');
     const tooltip = document.querySelector('.map-tooltip');
     const points = [...document.querySelectorAll('.point')];
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const defaultPulse = { x: 340, y: 300 };
 
     points.forEach((point) => {
       const label = point.querySelector('.label')?.textContent?.trim() || '';
@@ -152,16 +155,43 @@
         const y = (event.clientY - rect.top) / rect.height;
         const tiltX = (0.5 - y) * 8;
         const tiltY = (x - 0.5) * 10;
+        const svgCursor = getSvgCursor(event);
 
         mapShell.classList.add('is-interactive');
         mapShell.style.transform = `rotateX(${8 + tiltX}deg) rotateZ(${-1 + tiltY * 0.08}deg) translate3d(${(x - 0.5) * 12}px, ${(y - 0.5) * 8}px, 0) scale(1.045)`;
+
+        if (svgCursor) {
+          moveMapPulse(svgCursor.x, svgCursor.y);
+        }
       });
 
       loader.addEventListener('pointerleave', () => {
         mapShell.classList.remove('is-interactive');
         mapShell.style.transform = '';
+        moveMapPulse(defaultPulse.x, defaultPulse.y);
         hideTooltip();
       });
+    }
+
+    function getSvgCursor(event) {
+      const matrix = mapSvg.getScreenCTM();
+      if (!matrix) return null;
+
+      const point = mapSvg.createSVGPoint();
+      point.x = event.clientX;
+      point.y = event.clientY;
+
+      return point.matrixTransform(matrix.inverse());
+    }
+
+    function moveMapPulse(x, y) {
+      const clampedX = Math.min(Math.max(x, 130), 980);
+      const clampedY = Math.min(Math.max(y, 205), 405);
+
+      mapPulse.setAttribute(
+        'gradientTransform',
+        `translate(${clampedX.toFixed(1)} ${clampedY.toFixed(1)}) rotate(19) scale(520 180)`,
+      );
     }
 
     function showTooltip(point) {
