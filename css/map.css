@@ -3,8 +3,11 @@
   fill: #06101b;
   stroke: rgba(173, 200, 209, .16);
   stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   transform: translate(18px, 24px);
   filter: blur(.4px);
+  shape-rendering: geometricPrecision;
   animation: mapLayerEnter .9s .18s ease-out both;
 }
 
@@ -12,18 +15,37 @@
   opacity: .28;
   fill: #0a1a29;
   stroke: rgba(143, 211, 206, .18);
+  stroke-linecap: round;
+  stroke-linejoin: round;
   transform: translate(9px, 12px);
   filter: blur(.15px);
+  shape-rendering: geometricPrecision;
+}
+
+.map-edge-soft {
+  fill: none;
+  stroke: rgba(173, 200, 209, .22);
+  stroke-width: 3.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: .42;
+  shape-rendering: geometricPrecision;
+  vector-effect: non-scaling-stroke;
+  animation: mapLayerEnter .95s .22s ease-out both;
 }
 
 .map {
   fill: url(#mapFill);
   stroke: var(--map-edge);
-  stroke-width: 2.2;
+  stroke-width: 1.65;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   filter:
-    drop-shadow(0 0 8px rgba(173, 200, 209, .24))
+    drop-shadow(0 0 7px rgba(173, 200, 209, .22))
     drop-shadow(0 16px 20px rgba(0, 0, 0, .34))
     drop-shadow(0 34px 40px rgba(0, 0, 0, .34));
+  shape-rendering: geometricPrecision;
+  vector-effect: non-scaling-stroke;
   animation: mapLayerEnter .95s .24s ease-out both;
 }
 
@@ -134,6 +156,10 @@
   stroke: var(--point-accent, var(--cyan));
   stroke-width: 1.4;
   opacity: .24;
+  transform: scale(1.064, .746);
+  transform-box: fill-box;
+  transform-origin: center;
+  vector-effect: non-scaling-stroke;
   animation: pulse 3.8s ease-out infinite;
 }
 
@@ -142,6 +168,10 @@
   stroke: var(--point-accent, #adc8d1);
   stroke-width: 1.6;
   filter: drop-shadow(0 0 4px rgba(173, 200, 209, .3));
+  transform: scale(1.064, .746);
+  transform-box: fill-box;
+  transform-origin: center;
+  vector-effect: non-scaling-stroke;
   transition:
     fill .18s ease-out,
     stroke .18s ease-out,
@@ -160,6 +190,9 @@
   stroke-linejoin: round;
   text-rendering: geometricPrecision;
   filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .42));
+  transform: scale(1.064, .746);
+  transform-box: fill-box;
+  transform-origin: center;
   transition:
     fill .18s ease-out,
     opacity .18s ease-out,
@@ -182,7 +215,7 @@
 .point.is-active .label {
   fill: #ffffff;
   stroke: rgba(4, 14, 25, 1);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.064, .746);
 }
 
 .scan {
@@ -190,6 +223,7 @@
   stroke: rgba(255, 255, 255, .22);
   stroke-width: 18;
   stroke-linecap: round;
+  stroke-linejoin: round;
   stroke-dasharray: 160 1000;
   mix-blend-mode: screen;
   filter: blur(2.5px);
