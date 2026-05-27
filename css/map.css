@@ -109,13 +109,15 @@
 .plane {
   fill: #8fd3ce;
   stroke: rgba(7, 21, 37, .58);
-  stroke-width: .8;
-  opacity: .86;
+  stroke-width: .7;
+  stroke-linejoin: round;
+  opacity: .9;
   filter:
     drop-shadow(0 0 5px rgba(237, 244, 246, .42))
     drop-shadow(0 3px 6px rgba(0, 0, 0, .28));
   transform-box: fill-box;
   transform-origin: center;
+  scale: .82;
 }
 
 .hub,

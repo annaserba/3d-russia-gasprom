@@ -62,36 +62,24 @@
             <path class="inner-line" d="M404 230 C410 276 406 326 386 384"/>
             <path class="inner-line" d="M706 230 C734 276 756 326 770 382"/>
 
-            <path id="flight-main" class="route route-main flight-arc" d="M163.4 320.1 C292 222 618 226 767.1 370.7"/>
-            <path id="flight-yamal" class="route route-secondary flight-arc" d="M163.4 320.1 C210 258 292 238 339.3 236.2"/>
-            <path id="flight-ufa" class="route route-secondary flight-arc" d="M163.4 320.1 C208 304 250 306 288.5 326.4"/>
-            <path id="flight-spb" class="route route-secondary flight-arc" d="M163.4 320.1 C150 294 130 290 121.6 296.1"/>
-            <path id="flight-astrakhan" class="route route-secondary flight-arc" d="M163.4 320.1 C178 344 198 366 223.2 374.2"/>
-            <path id="flight-urengoy" class="route route-hot flight-arc" d="M323.7 312.1 C342 284 365 264 387.5 260.8"/>
+            <path id="flight-main" class="route route-main flight-arc" d="M163.4 320.1 C320 268 604 274 767.1 370.7"/>
+            <path id="flight-yamal" class="route route-secondary flight-arc" d="M163.4 320.1 C214 278 292 252 339.3 236.2"/>
+            <path id="flight-ufa" class="route route-secondary flight-arc" d="M163.4 320.1 C208 314 250 316 288.5 326.4"/>
+            <path id="flight-spb" class="route route-secondary flight-arc" d="M163.4 320.1 C150 302 130 296 121.6 296.1"/>
+            <path id="flight-astrakhan" class="route route-secondary flight-arc" d="M163.4 320.1 C180 336 202 360 223.2 374.2"/>
+            <path id="flight-urengoy" class="route route-hot flight-arc" d="M323.7 312.1 C344 292 366 270 387.5 260.8"/>
 
             <g class="planes" aria-hidden="true">
               <g class="plane plane-main">
-                <path d="M13 0 L-7 6 L-3 1 L-12 1 L-12 -1 L-3 -1 L-7 -6 Z"/>
-                <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
+                <path d="M15 0 C12 -2.1 6 -2.2 0 -1.1 L-8 -8 L-10.8 -6.8 L-5.1 -.8 L-13.4 -1.7 L-16 0 L-13.4 1.7 L-5.1 .8 L-10.8 6.8 L-8 8 L0 1.1 C6 2.2 12 2.1 15 0 Z"/>
+                <animateMotion dur="22s" repeatCount="indefinite" rotate="auto">
                   <mpath href="#flight-main"/>
                 </animateMotion>
               </g>
-              <g class="plane plane-yamal">
-                <path d="M11 0 L-6 5 L-3 1 L-10 1 L-10 -1 L-3 -1 L-6 -5 Z"/>
-                <animateMotion dur="10.4s" begin="-2.6s" repeatCount="indefinite" rotate="auto">
-                  <mpath href="#flight-yamal"/>
-                </animateMotion>
-              </g>
               <g class="plane plane-ufa">
-                <path d="M11 0 L-6 5 L-3 1 L-10 1 L-10 -1 L-3 -1 L-6 -5 Z"/>
-                <animateMotion dur="9.6s" begin="-5.2s" repeatCount="indefinite" rotate="auto">
+                <path d="M15 0 C12 -2.1 6 -2.2 0 -1.1 L-8 -8 L-10.8 -6.8 L-5.1 -.8 L-13.4 -1.7 L-16 0 L-13.4 1.7 L-5.1 .8 L-10.8 6.8 L-8 8 L0 1.1 C6 2.2 12 2.1 15 0 Z"/>
+                <animateMotion dur="18s" begin="-9s" repeatCount="indefinite" rotate="auto">
                   <mpath href="#flight-ufa"/>
-                </animateMotion>
-              </g>
-              <g class="plane plane-urengoy">
-                <path d="M10 0 L-5 4.5 L-2 1 L-9 1 L-9 -1 L-2 -1 L-5 -4.5 Z"/>
-                <animateMotion dur="8.8s" begin="-7.4s" repeatCount="indefinite" rotate="auto">
-                  <mpath href="#flight-urengoy"/>
                 </animateMotion>
               </g>
             </g>
