@@ -47,7 +47,7 @@
 
 .stage {
   position: relative;
-  width: min(92vw, 1120px);
+  width: min(96vw, 1280px);
   margin: 0 auto;
   perspective: 1100px;
   animation: stageEnter .8s cubic-bezier(.2, .8, .2, 1) both;
@@ -68,7 +68,7 @@
 }
 
 .map-art {
-  transform: translateY(-26px) scale(.94, 1.34);
+  transform: translateY(-28px) scale(.99, 1.4);
   transform-box: view-box;
   transform-origin: center;
   animation: mapArtEnter 1.15s .16s cubic-bezier(.2, .8, .2, 1) both;
